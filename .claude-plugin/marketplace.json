@@ -1,0 +1,12 @@
+{
+  "name": "readers-ear",
+  "description": "The readers-ear skill: self-revision of prose in any language.",
+  "owner": {
+    "name": "Motestream",
+    "email": "motestream.studio@gmail.com",
+    "url": "https://github.com/motestream"
+  },
+  "plugins": [
+    { "name": "readers-ear", "source": "./plugin" }
+  ]
+}

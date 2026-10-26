@@ -1,0 +1,19 @@
+{
+  "name": "readers-ear",
+  "displayName": "Reader's Ear",
+  "description": "Has the agent reread and revise prose until it reads naturally to its intended reader, in any language and genre.",
+  "author": {
+    "name": "Motestream",
+    "email": "motestream.studio@gmail.com",
+    "url": "https://github.com/motestream"
+  },
+  "homepage": "https://github.com/motestream/readers-ear",
+  "repository": "https://github.com/motestream/readers-ear",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "editing",
+    "proofreading",
+    "multilingual"
+  ]
+}
