@@ -52,12 +52,13 @@ When you read a draft or a text as its reader, check specifically for these two 
 When you revise or translate text the user supplies:
 
 - Keep the author's facts, points, and voice, and change no more than the request calls for.
-- Treat a general request (revise, polish, make it sound natural or less AI-like) as covering every scale. A narrow request, such as fixing typos, doesn't cover larger problems: point them out instead of fixing them.
-- Point out, rather than fix, factual errors and any ambiguity that only a guess at the author's meaning could resolve.
+- Treat a general request (revise, polish, make it sound natural or less AI-like) as covering every scale. A narrow request, such as fixing typos, doesn't cover larger problems: point out, instead of fixing, the ones that would mislead or confuse the reader, such as factual errors, and make no suggestions about style.
+- Point out, rather than fix, factual errors and any ambiguity that only a guess at the author's meaning could resolve. An inconsistency you can resolve from the text's own facts, such as an instruction that conflicts with a time the text gives, is a problem to fix, not to flag.
 
 ## In every task
 
-- Use only the facts, figures, and quotations you have. If information is missing, ask the user; when you can't ask, such as when running unattended, mark the gap clearly in the text, for example with a bracketed placeholder.
+- Use only the facts, figures, and quotations you have. The one exception: when text the user supplies offers only generalities and the request covers making it read naturally or less AI-like, you may add widely known, accurate general information, such as how a common technique works. Never add experiences, data, quotations, or claims about the user or their organization, and list everything you added.
+- If information is missing, ask the user, and write the sentence that needs it with a bracketed placeholder, so that the text is ready once the user fills it in. When you can't ask, such as when running unattended, mark the gap in the text the same way.
 - If you're unsure of your judgment in the language or the subject, change less and say so.
 - Deliver the finished text plus what the user needs to know, including the points you flagged instead of fixing and, if you reorganized the user's text, a sentence on why. Leave out working notes and drafts unless the user asks for them.
 
@@ -78,11 +79,11 @@ Then work through these steps:
 
 **Source rules** (for steps 1 and 3). Use sources originally written in the text's language, whose wording a person or organization has checked and takes responsibility for. Translations, including the translated pages of multilingual sites, don't qualify, because they can carry the patterns of their source language. The one exception is in step 3: to check how an organization writes its own names and terms, you may use its official pages in the text's language. For phrasing and genre conventions, use text of the same genre and purpose, such as:
 
-- pages of public institutions, large companies, and established publishers
+- pages of public institutions, large companies, major news organizations, and established publishers
 - work by respected writers in the genre
 - text from curated corpora
 
-Among these genre texts, prefer those from before generative AI became widespread (around 2022). This preference doesn't apply to the dictionaries and official sites in step 3.
+Don't use text whose wording no one appears to have checked, such as anonymous pages, sites that mass-produce articles, and automatically generated summaries.
 
 ## Scope
 
