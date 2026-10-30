@@ -18,11 +18,11 @@ Reader's Ear assumes that the model can already tell good writing from bad in an
 
 The full instructions are in [`SKILL.md`](plugin/skills/readers-ear/SKILL.md). In short:
 
-- **Writing.** When the agent writes new text, it first works out who will read it and what they need, then writes for them from the first draft. It reads the draft once as that reader and fixes what it finds.
+- **Writing.** When the agent writes new text, it first works out who will read it, what they already know, what they're reading it for, and how long a skilled writer would make it, then writes for them from the first draft. It reads the draft once as that reader and fixes what it finds.
 - **Revising.** It reads the text as its reader would and fixes only concrete problems, wherever they are, from a single word to the organization of the whole text. It keeps your facts, main points, and voice, and returns good text almost unchanged. It points out factual errors and problems beyond what you asked for instead of fixing them.
-- **Easy-to-miss problems.** In both writing and revising, it looks in particular for traces of other languages, such as carried-over word order or date formats, and for reliance on context the reader hasn't seen, such as the agent's conversation with you.
+- **Easy-to-miss problems.** In both writing and revising, it looks in particular for traces of other languages, such as carried-over word order or date formats, and for reliance on context the reader hasn't seen, such as the agent's conversation with you or names it gave things while working.
 - **Careful mode.** A slower, more thorough way of working that brings in outside views, used only on request because it costs far more time and tokens. Before the agent judges the text itself, two fresh AI instances (for example, subagents) help: one gathers reference texts of the same genre without seeing yours, and the other reads the text cold. The agent then checks key wording and facts against sources originally written in the text's language (not translations) and revises the text. It tells you what it consulted and any step it skipped.
-- **Scope.** By default, it works unprompted only on text the agent writes for other people. You can extend it to everything the agent writes (see Usage).
+- **Scope.** By default, it works unprompted on text the agent writes for other people and on its reports to you: the final answer to a request it worked on, and documents it makes for you to read. You can extend it to everything the agent writes, or limit it to text for other people (see Usage).
 
 ## Trust
 
@@ -106,13 +106,13 @@ It asks which agent to install for, or you can name one with `--agent`. To updat
 
 ## Usage
 
-Reader's Ear starts on its own when the agent writes text for other people. You can also ask for it in your own words, for example "Make this sound natural," or invoke it by name with `/readers-ear` (`/readers-ear:readers-ear` if you installed it as a Claude Code plugin).
+Reader's Ear starts on its own when the agent writes text for other people or reports to you. You can also ask for it in your own words, for example "Make this sound natural," or invoke it by name with `/readers-ear` (`/readers-ear:readers-ear` if you installed it as a Claude Code plugin).
 
 **Careful mode.** The agent uses it only when you ask for it explicitly, for example: "Take your time and revise this carefully" or "Take your time and write this carefully." To have it used every time, say so in your saved instructions, such as a `CLAUDE.md`.
 
 **Limiting changes.** Tell the agent what to limit itself to, for example: "Just fix the typos." It then points out other problems instead of fixing them.
 
-**Scope.** In an interactive session where settings can be saved, the agent asks once, after it first writes text for other people, whether to apply the skill to everything it writes or only to text for other people. If you don't answer, it keeps the default and saves that, so it won't ask again. To change the scope later, ask the agent. Where settings can't be saved, the agent doesn't ask; if you ask it to change the scope there, the change applies only to the current conversation, and the agent gives you a sentence to add to your own instructions so that later sessions pick it up.
+**Scope.** The default covers text for other people and the agent's reports to you: its final answer to a request it did work for, such as reading files or running commands, and the documents it makes for you to read. It doesn't cover what the agent writes while working toward the final answer, or short replies it can give from the conversation alone. In an interactive session where settings can be saved, the agent asks once, after it first delivers text in the default scope, whether to keep the default, apply the skill to everything it writes, or limit it to text for other people. If you don't answer, it keeps the default and saves that, so it won't ask again. To change the scope later, ask the agent. Where settings can't be saved, the agent doesn't ask; if you ask it to change the scope there, the change applies only to the current conversation, and the agent gives you a sentence to add to your own instructions so that later sessions pick it up.
 
 ## Trying it out
 
@@ -123,6 +123,7 @@ Before you rely on it, try these checks:
 - Give it text that's already good and ask for a revision. It should come back almost unchanged.
 - Give it text whose facts are sound but whose order is hard to follow, and ask for a revision. It should reorganize the text and keep every fact.
 - During coding work, check that it improves the commit messages, PR descriptions, and docs the agent writes, and that it leaves existing text by other people alone.
+- After a task that takes several steps, check that the agent's final answer uses words you know rather than names it made up while working, and that it's no longer than you need.
 
 ## Translations
 

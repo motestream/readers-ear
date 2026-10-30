@@ -1,6 +1,6 @@
 ---
 name: readers-ear
-description: Writes and revises prose in any language and genre so that it reads naturally to its intended reader. Use when writing text that people other than the user will read, such as emails, articles, documents, posts, slides, speeches, fiction, translations, UI text, commit messages, and PR descriptions, even when the user hasn't asked for help with the wording. Also use when the user asks to revise or polish text, or to make it sound natural or less AI-like, and for all prose the agent writes when the user's saved instructions say so.
+description: Writes and revises prose in any language and genre so that it reads naturally to its intended reader. Use when writing text that people other than the user will read, such as emails, articles, documents, posts, slides, speeches, fiction, translations, UI text, commit messages, and PR descriptions, and when reporting to the user, in the final answer after working on the user's request or in a document made for the user to read, even when the user hasn't asked for help with the wording. Also use when the user asks to revise or polish text, or to make it sound natural or less AI-like, and for all prose the agent writes when the user's saved instructions say so.
 ---
 
 # Reader's Ear
@@ -9,7 +9,9 @@ Make the text you write or revise read as if a skilled writer of its language an
 
 ## The standard
 
-Measure the text against its intended reader, not against rules. Ask what this reader already knows, what they need from the text, how they relate to the writer, and what they expect from its genre and language. Whether a word, a sentence, or an organization works depends on those answers, so the same choice can be right in one text and wrong in another. Keep the set phrases the genre calls for, even where they look formulaic. Treat a request to make text less AI-like as a request to fix what this reader would find unnatural.
+Measure the text against its intended reader, not against rules. Ask what this reader already knows, what they need from the text, how they relate to the writer, and what they expect from its genre and language. Whether a word, a sentence, or an organization works depends on those answers, so the same choice can be right in one text and wrong in another. Keep the set phrases the genre calls for, even where they look formulaic.
+
+To find what this reader already knows, separate what they have seen from what only you know. When the reader is the user, what they have seen in the conversation is their own messages, your final answers to their requests, and the documents you made for them. Treat everything else as unseen, including what you wrote in the conversation while working toward an answer, your reasoning, tool output, reports from subagents, and the names you gave things while working. Beyond the conversation, the user knows what they bring from their own work and field.
 
 Judge the text by the norms of its own language, not by those of English (the language of these instructions) or of the language you think in.
 
@@ -19,9 +21,9 @@ Writing samples and style guides the user provides take precedence over this ski
 
 Use this when you write text yourself from information you have, including when you translate.
 
-Before drafting, answer the questions in "The standard" for this reader, decide what they need to come away with and what they need first, and choose the organization that the genre and this reader expect; for a translation, keep the source's organization (the order of its sections and points) unless the user asks you to adapt it. Then write the draft for that reader, following the norms of the text's language and genre.
+Before drafting, answer the questions in "The standard" for this reader. Decide what this reader is reading the text for, such as making a decision, running a command, learning where things stand, or enjoying a story, and from that purpose, what they need to come away with and what they need first. Estimate how long a skilled writer would make this text for this reader; for a reply to the user in the conversation, think of how long a capable colleague's reply reporting the same result would be. Choose the organization that the genre and this reader expect; for a translation, keep the source's organization (the order of its sections and points) unless the user asks you to adapt it. Then write the draft for that reader, following the norms of the text's language and genre.
 
-After drafting, read the draft once as its reader would, and fix the concrete problems you find by the criteria and methods in "Revising text". If the draft already reads well, leave it as it is.
+After drafting, read the draft once as its reader would, and fix the concrete problems you find by the criteria and methods in "Revising text". If the draft is much longer than you estimated, check each passage for whether this reader needs it. If the draft already reads well, leave it as it is.
 
 ## Revising text
 
@@ -32,6 +34,8 @@ Read the text as its intended reader would, meeting it for the first time. A pro
 - a place where this reader would stumble, lose the thread, or not find what they need when they need it
 - a place where a skilled writer of that language and genre wouldn't have written that way, and you can say how they would have written it
 - a passage that gives this reader nothing they need
+
+To judge the last, ask whether the text would serve this reader's purpose any less well without the passage.
 
 Problems occur at every scale: a word, a sentence, a passage, or the organization of the whole text. Look at every scale.
 
@@ -45,7 +49,7 @@ When you read a draft or a text as its reader, check specifically for these two 
 
 **Interference from other languages.** Languages other than the text's own leave traces, even languages that appear nowhere in the input or in your reasoning. Look for the signs rather than trying to name the source language: word order, phrasing, collocations, idioms, punctuation and quotation marks, number and date formats, or forms of address carried over from another language. Look also for foreign words this reader wouldn't use, and for mixed regional spellings, scripts, or vocabulary.
 
-**Context the reader hasn't seen.** Look for places that rely on something the reader hasn't seen, such as your conversation with the user or notes the reader doesn't have.
+**Context the reader hasn't seen.** Look for places that rely on something the reader hasn't seen (see "The standard"), such as your conversation with the user, notes the reader doesn't have, or names you gave things while working. For each name, term, and reference to something earlier, ask where this reader would have learned it. If you can't point to the place, say it in words this reader knows, such as the ones they used themselves, or, if they need the term, explain it where it first appears.
 
 ## Text the user supplies
 
@@ -87,21 +91,22 @@ Don't use text whose wording no one appears to have checked, such as anonymous p
 
 ## Scope
 
-The scope matters only when no one has asked you to use this skill: it decides which text you apply the skill to on your own. Whatever the scope, always revise what the user asks you to revise. There are two scopes:
+The scope matters only when no one has asked you to use this skill: it decides which text you apply the skill to on your own. Whatever the scope, always revise what the user asks you to revise. There are three scopes:
 
-- **Text for others** (the default): text you write whose final readers are people other than the user.
+- **Text for others and reports to the user** (the default): text for others, as defined below, and your reports to the user. A report is either your final answer to a request the user makes to you directly, when you did work to answer it, such as reading files, running commands, or delegating to subagents, or a document or other material you make for the user to read. What you write in the conversation while working toward the final answer isn't a report, and neither is a short reply you can give from the conversation alone.
+- **Text for others**: text you write whose final readers are people other than the user.
 - **All prose**: all prose you write.
 
-If no scope is set in your instructions or memory, use text for others. After you deliver the first text for others, ask the user whether they want the skill applied to all prose you write, if all of these hold:
+If no scope is set in your instructions or memory, use the default. After you deliver the first text in the default scope, ask the user whether they want to keep this scope, apply the skill to all prose you write, or apply it only to text for others, if all of these hold:
 
 - You're working with the user interactively, not as a subagent or unattended.
 - The user can make this choice. An end user of someone else's product, for example, can't.
 - There is a suitable place to save the answer.
 
-Ask this only once across all sessions. If the user moves on without answering, treat that as a choice of text for others and save it as described below, so that no later session asks again.
+Ask this only once across all sessions. If the user moves on without answering, treat that as a choice of the default and save it as described below, so that no later session asks again.
 
-When the user answers, or later changes the scope, save the choice as one sentence in the user's language that names the skill and the scope. In English, for example: "Use the readers-ear skill on all prose you write." or "Use the readers-ear skill on text you write for other people to read."
+When the user answers, or later changes the scope, save the choice as one sentence in the user's language that names the skill and the scope. In English, for example: "Use the readers-ear skill on text you write for other people to read and on your final answers and documents for me.", "Use the readers-ear skill on all prose you write.", or "Use the readers-ear skill only on text you write for other people to read."
 
 Save the sentence somewhere personal that every future session loads, such as a user-level instruction file or account memory, rather than a file shared with a team, memory limited to one project, or a place that won't be loaded next time, such as a disposable cloud environment. Tell the user where you saved it. If the user changes the scope where no such place exists, apply the choice to the current conversation only, say so, and give the user the sentence to paste into their own instructions.
 
-When you apply the skill without being asked, work only on the text you write yourself, and leave text by other people as it is, even in the same file. If you're applying it inside another task, such as writing a commit message, deliver the text as that task requires and mention only what the user needs to know.
+When you apply the skill without being asked, work only on the text you write yourself, and leave text by other people as it is, even in the same file. If you're applying it inside another task, such as writing a commit message or a report to the user, deliver the text as that task requires and mention only what the user needs to know.
