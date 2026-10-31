@@ -21,9 +21,9 @@ Writing samples and style guides the user provides take precedence over this ski
 
 Use this when you write text yourself from information you have, including when you translate.
 
-Before drafting, answer the questions in "The standard" for this reader. Decide what this reader is reading the text for, such as making a decision, running a command, learning where things stand, or enjoying a story, and from that purpose, what they need to come away with and what they need first. Estimate how long a skilled writer would make this text for this reader; for a reply to the user in the conversation, think of how long a capable colleague's reply reporting the same result would be. Choose the organization that the genre and this reader expect; for a translation, keep the source's organization (the order of its sections and points) unless the user asks you to adapt it. Then write the draft for that reader, following the norms of the text's language and genre.
+Before drafting, answer the questions in "The standard" for this reader. Decide what this reader is reading the text for, such as making a decision, running a command, learning where things stand, or enjoying a story, and from that purpose, what they need to come away with and what they need first. Choose the organization that the genre and this reader expect; for a translation, keep the source's organization (the order of its sections and points) unless the user asks you to adapt it. Then write the draft for that reader, following the norms of the text's language and genre.
 
-After drafting, read the draft once as its reader would, and fix the concrete problems you find by the criteria and methods in "Revising text". If the draft is much longer than you estimated, check each passage for whether this reader needs it. If the draft already reads well, leave it as it is.
+After drafting, read the draft once as its reader would, and fix the concrete problems you find by the criteria and methods in "Revising text". If the draft already reads well, leave it as it is.
 
 ## Revising text
 

@@ -1,60 +1,126 @@
 # readers-ear (deutsche Übersetzung zur Orientierung)
 
-> Diese Übersetzung dient nur zur Orientierung. Agenten laden nur das englische Original [`plugin/skills/readers-ear/SKILL.md`](../plugin/skills/readers-ear/SKILL.md); bei Abweichungen gilt die englische Fassung. Übersetzt nach dem Stand der englischen Fassung vom 25. Oktober 2026.
+> Diese Übersetzung dient nur zur Orientierung. Agenten laden nur das englische Original [`plugin/skills/readers-ear/SKILL.md`](../plugin/skills/readers-ear/SKILL.md); bei Abweichungen gilt die englische Fassung. Übersetzt nach dem Stand der englischen Fassung vom 31. Oktober 2026.
 
-```yaml
----
-name: readers-ear
-description: Überarbeitet Texte vom Aufbau bis zur Wortwahl so, dass sie sich für die vorgesehenen Leser natürlich lesen – in jeder Sprache und jedem Genre. Immer verwenden, wenn du Texte schreibst, die andere Personen als der Nutzer lesen werden (E-Mails, Artikel, Dokumente, Beiträge, Folien, Reden, Belletristik, Übersetzungen, UI-Texte), auch wenn keine Überarbeitung verlangt wird; immer, wenn der Nutzer darum bittet, einen Text zu überarbeiten oder zu glätten oder ihn natürlicher oder weniger nach KI klingen zu lassen; und für alle Texte, wenn die gespeicherten Anweisungen des Nutzers das vorsehen.
----
-```
+## Name und Beschreibung
+
+Dieser Abschnitt übersetzt die Angaben `name` und `description` am Anfang der englischen Datei. Die Beschreibung sagt dem Agenten, wann er den Skill verwenden soll.
+
+- **Name:** `readers-ear`
+- **Beschreibung:** Schreibt und überarbeitet Texte in jeder Sprache und jedem Genre so, dass sie sich für ihre Leser natürlich lesen. Der Skill ist in folgenden Fällen zu verwenden:
+  - beim Schreiben von Texten, die andere Personen als der Nutzer lesen werden, etwa E-Mails, Artikel, Dokumente, Beiträge, Folien, Reden, Belletristik, Übersetzungen, UI-Texte, Commit-Nachrichten und PR-Beschreibungen
+  - bei Berichten an den Nutzer: in der abschließenden Antwort nach der Arbeit an einer Anfrage des Nutzers oder in einem Dokument, das für den Nutzer erstellt wird, damit er es liest
+  - wenn der Nutzer darum bittet, einen Text zu überarbeiten oder zu glätten oder ihn natürlicher oder weniger nach KI klingen zu lassen
+  - für alle Texte, die der Agent schreibt, wenn die gespeicherten Anweisungen des Nutzers das vorsehen
+
+  In den ersten beiden Fällen gilt das auch dann, wenn der Nutzer nicht um Hilfe bei der Formulierung gebeten hat.
+
+Es folgt die Übersetzung der eigentlichen Anweisungen.
 
 # Reader's Ear
 
-Ziel ist ein Text, der sich liest, als hätte ihn jemand, der die Sprache und das Genre des Textes sicher beherrscht, für die vorgesehenen Leser geschrieben. Maßstab sind diese Leser, nicht Regeln: Arbeite nicht mit Listen verbotener Wörter oder Muster, und behalte die festen Formulierungen bei, die das Genre oder die Konvention verlangt. Beurteile den Text nach den Normen seiner eigenen Sprache – nicht nach denen der Sprache dieser Anleitung (im Original Englisch) oder der Sprache, in der du denkst. Textbeispiele und Styleguides des Nutzers haben Vorrang vor allem, was in dieser Anleitung steht.
+Schreib und überarbeite Texte so, dass sie sich lesen, als hätte sie jemand, der ihre Sprache und ihr Genre sicher beherrscht, für die Leser geschrieben, für die sie bestimmt sind.
 
-## Standardüberarbeitung
+## Der Maßstab
 
-Lies den Text so, wie die vorgesehenen Leser ihn zum ersten Mal lesen würden. Prüfe dann das Ganze vor den Teilen: Kläre zuerst, was der Text diesen Lesern vermitteln muss, und ob sein Aufbau, gemessen an den Normen seines Genres, das leistet (was am Anfang steht, wie die Teile gruppiert und angeordnet sind, wozu jeder Teil da ist). Erst danach kommen Absätze, Sätze und Wörter. Ausgefeilte Sätze retten keinen Aufbau, der nicht trägt, und wer den Aufbau umbaut, ändert die Sätze ohnehin.
+Miss den Text an den Lesern, für die er bestimmt ist, nicht an Regeln. Frag dich, was diese Leser schon wissen, was sie dem Text entnehmen müssen, in welcher Beziehung sie zum Verfasser stehen und was sie von Genre und Sprache des Textes erwarten. Ob ein Wort, ein Satz oder ein Aufbau passt, hängt von diesen Antworten ab; dieselbe Entscheidung kann deshalb in einem Text richtig und in einem anderen falsch sein. Behalte die festen Formulierungen bei, die das Genre verlangt, auch wenn sie formelhaft wirken.
 
-Ändere nur, was du als konkretes Problem benennen kannst: eine Stelle, an der die Leser stolpern oder den Faden verlieren würden; eine Information, die sie nicht dort finden, wo sie sie brauchen; oder eine Formulierung, die jemand, der diese Sprache und dieses Genre beherrscht, so nicht geschrieben hätte. Behebe jedes Problem auf der Ebene, auf der es liegt, vom einzelnen Wort bis zum ganzen Text; manchmal besteht die Lösung im Streichen. Einzelne Sätze umzuformulieren ändert am Aufbau nichts. Liegt das Problem im Aufbau, liste deshalb auf, was der Text vermitteln muss (seine Fakten, seine Aussagen, seinen Zweck), und baue den betroffenen Teil oder den ganzen Text von dieser Liste aus neu auf, in der Reihenfolge und Form, die diese Leser brauchen. Vergleiche das Ergebnis danach mit dem Original, um aufzuspüren, welche Fakten oder Aussagen beim Neuaufbau verloren gegangen, verändert worden oder neu hinzugekommen sind. Behalte eine Änderung nur, wenn sie den Text besser macht, und hör auf, wenn du kein weiteres Problem benennen kannst. Ein Text, der schon gut ist, sollte fast unverändert bleiben. Bemiss den Aufwand nach Länge und Tragweite des Textes.
+Um herauszufinden, was diese Leser schon wissen, trenne das, was sie gesehen haben, von dem, was nur du weißt. Ist der Nutzer selbst der Leser, hat er im Gespräch Folgendes gesehen: seine eigenen Nachrichten, deine abschließenden Antworten auf seine Anfragen und die Dokumente, die du für ihn erstellt hast. Geh bei allem anderen davon aus, dass er es nicht gesehen hat. Dazu gehören das, was du auf dem Weg zu einer Antwort im Gespräch geschrieben hast, deine Überlegungen, Tool-Ausgaben, Berichte von Subagenten und die Namen, die du Dingen bei der Arbeit gegeben hast. Außerhalb des Gesprächs bringt der Nutzer das Wissen aus seiner eigenen Arbeit und seinem Fachgebiet mit.
 
-Zwei Arten von Problemen übersieht man leicht. Zum einen sind das Einflüsse aus anderen Sprachen als der des Textes, auch aus solchen, die weder in der Eingabe noch in deinen Überlegungen vorkommen. Dazu gehören übernommene Wortstellung, Formulierungen, Kollokationen, Redewendungen, Zeichensetzung und Anführungszeichen, Zahlen- und Datumsformate oder Anredeformen; Fremdwörter, die diese Leser nicht verwenden würden; vermischte regionale Schreibweisen, Schriftsysteme oder Wortschätze. Zum anderen kann der Text auf Kontext bauen, den die Leser nicht kennen, etwa auf dein Gespräch mit dem Nutzer.
+Beurteile den Text nach den Normen seiner eigenen Sprache, nicht nach denen des Englischen (der Sprache dieser Anweisungen) oder der Sprache, in der du denkst.
 
-Für alles, was du überarbeitest, gilt:
+Textbeispiele und Styleguides, die der Nutzer bereitstellt, haben Vorrang vor diesem Skill. Hat der Nutzer nicht gesagt, wer den Text liest, erschließe es aus dem Text und der Anfrage.
 
-- Wahre in Texten, die dir der Nutzer gibt, die Fakten, die Aussagen und die Stimme ihres Verfassers, und ändere nicht mehr, als der Auftrag verlangt. Weise auf Fehler oder Mehrdeutigkeiten hin, die den Sinn betreffen, statt sie zu beseitigen. Ein allgemeiner Auftrag, etwa einen Text zu überarbeiten, zu glätten oder natürlicher klingen zu lassen, schließt den Aufbau ein; ein engerer, etwa nur Tippfehler oder Grammatik zu korrigieren, schließt ihn nicht ein – weise dann auf Probleme im Aufbau hin, statt sie zu beheben. Eine Übersetzung folgt dem Aufbau ihrer Vorlage, es sei denn, der Nutzer bittet dich, diesen Aufbau anzupassen.
-- Erfinde keine Fakten, Zahlen oder Zitate, um einen Text konkreter zu machen; benenne die Lücke oder frage nach.
-- Bist du unsicher, ob du die Sprache oder das Thema gut genug beurteilen kannst, ändere weniger und sag das.
-- Liefere den fertigen Text und alles, was der Nutzer wissen muss, etwa Stellen, die du nur angemerkt statt geändert hast. Hast du den Aufbau eines Textes geändert, den dir der Nutzer gegeben hat, erkläre in ein, zwei Sätzen, was du geändert hast und warum. Deine Arbeitsnotizen und Entwürfe gehören nicht dazu, es sei denn, der Nutzer bittet darum.
+## Neue Texte schreiben
 
-## Gründliche Überarbeitung
+So gehst du vor, wenn du selbst einen Text aus Informationen schreibst, die dir vorliegen, auch beim Übersetzen.
 
-Mach das nur, wenn der Nutzer ausdrücklich um eine langsamere, gründlichere Überarbeitung als üblich bittet, denn sie kostet weit mehr Zeit und Tokens. Die gründliche Überarbeitung ergänzt die Standardüberarbeitung um Einschätzungen von außen. Hol sie ein, bevor du dir selbst ein Urteil über den Text bildest, damit dein Urteil sie nicht beeinflusst. Geh in dieser Reihenfolge vor:
+Beantworte vor dem Entwurf die Fragen aus dem Abschnitt „Der Maßstab“ für die Leser dieses Textes. Lege fest, wozu sie den Text lesen, etwa um eine Entscheidung zu treffen, einen Befehl auszuführen, den Stand der Dinge zu erfahren oder eine Geschichte zu genießen, und leite aus diesem Zweck ab, was sie am Ende mitnehmen müssen und was sie zuerst brauchen. Wähle den Aufbau, den das Genre und diese Leser erwarten; bei einer Übersetzung behalte den Aufbau der Vorlage bei (die Reihenfolge ihrer Abschnitte und Punkte), es sei denn, der Nutzer bittet dich, ihn anzupassen. Schreib dann den Entwurf für diese Leser und folge dabei den Normen der Sprache und des Genres des Textes.
 
-1. Bevor du selbst nach Problemen suchst, starte zwei neue Kontexte, die dein Gespräch nicht kennen, etwa neu angelegte Subagenten (keine Kopien dieses Kontexts); sie können gleichzeitig arbeiten. Teile keinem der beiden deine eigenen Beobachtungen oder Vermutungen zum Text mit.
-   - Referenzsuche: Nenne diesem Kontext die Sprache des Textes, die vorgesehenen Leser, das Genre, den Zweck in groben Zügen und die Quellenregeln unten, aber gib ihm nicht den Text. Lass ihn einige Texte desselben Genres und Zwecks suchen, die diese Regeln erfüllen. Er soll die gefundenen Seiten vollständig lesen, nicht nur die Ausschnitte in den Suchergebnissen, die verwendeten Seiten auflisten und zusammenfassen, wie diese Texte geschrieben sind: Aufbau, feste Formulierungen, Länge, Register und alles andere, was in diesem Genre üblich ist.
-   - Unvoreingenommenes Lesen: Gib diesem Kontext nur den Text und eine Notiz zu dessen Lesern und Zweck. Er soll den Text so lesen, wie diese Leser es täten, und berichten, wo er stolpert oder den Faden verliert und was er für die Hauptaussage hält.
-2. Lies den Text dann selbst, mit beiden Berichten vor Augen, und liste seine Probleme auf.
-3. Gleiche die Punkte, auf die es den Lesern am meisten ankommt oder bei denen du am unsichersten bist (Rechtschreibung, Zeichensetzung, Begriffe, Fakten usw.), mit aktuellen, maßgeblichen Quellen ab, etwa mit Wörterbüchern, Sprachratgebern und offiziellen Seiten.
-4. Überarbeite wie bei der Standardüberarbeitung. Nutze die Referenzen als Maßstab für den Text, nicht als Vorlage zum Abschreiben; in Texten, die dir der Nutzer gegeben hat, haben die Fakten, die Aussagen und die Stimme ihres Verfassers weiterhin Vorrang.
+Lies den Entwurf danach einmal so, wie seine Leser ihn lesen würden, und behebe die konkreten Probleme, die du findest, nach den Kriterien und Methoden aus dem Abschnitt „Texte überarbeiten“. Liest sich der Entwurf schon gut, lass ihn, wie er ist.
 
-Quellenregeln für die Schritte 1 und 3: Nimm Quellen in der Sprache des Textes, deren Wortlaut eine Person oder Organisation geprüft hat und verantwortet.
+## Texte überarbeiten
 
-- Nimm keine Übersetzungen, auch keine guten, denn sie können Muster ihrer Ausgangssprache mitbringen. Das gilt auch für übersetzte Fassungen von Seiten mehrsprachiger Websites.
-- Für Formulierungen und Genrekonventionen nimm Texte desselben Genres und Zwecks, etwa die originalsprachigen Seiten öffentlicher Einrichtungen, großer Unternehmen und etablierter Verlage, Werke anerkannter Autoren dieses Genres sowie Texte aus Korpora. Unter diesen Quellen sind Texte aus der Zeit vor der Verbreitung generativer KI (etwa bis 2022) am sichersten; spätere Texte taugen ebenfalls, wenn erkennbar eine Redaktion oder Institution für sie einsteht.
+Nach diesem Verfahren überarbeitest du vorhandene Texte.
 
-Kannst du keine neuen Kontexte starten, verzichte auf das unvoreingenommene Lesen, such und lies die Referenzen selbst, bevor du nach Problemen suchst, und mach dann mit Schritt 2 weiter.
+Lies den Text mit den Augen seiner Leser, die ihn zum ersten Mal sehen. Als Problem zählt nur, was du konkret benennen kannst:
 
-Sag dem Nutzer kurz, was du herangezogen hast und was sich dadurch geändert hat, und nenne jeden Schritt, den du nicht ausführen konntest, etwa das Lesen in neuen Kontexten oder die Websuche. Gib nie einen Schritt als erledigt aus, den du ausgelassen hast.
+- eine Stelle, an der diese Leser stolpern oder den Faden verlieren würden oder an der sie nicht finden, was sie in diesem Moment brauchen
+- eine Stelle, die jemand, der diese Sprache und dieses Genre sicher beherrscht, so nicht geschrieben hätte, und bei der du sagen kannst, wie er sie geschrieben hätte
+- eine Passage, die diesen Lesern nichts gibt, was sie brauchen
+
+Um Letzteres zu beurteilen, frag dich, ob der Text ohne diese Passage dem Zweck dieser Leser schlechter dienen würde.
+
+Probleme gibt es auf jeder Ebene: im einzelnen Wort, im Satz, in einer Passage oder im Aufbau des ganzen Textes. Prüfe jede Ebene.
+
+Behebe jedes Problem auf seiner eigenen Ebene. Streiche eine Passage, die diesen Lesern nichts gibt, was sie brauchen; in Texten, die dir der Nutzer vorlegt, tu das nur bei einem allgemeinen Auftrag (siehe Abschnitt „Vom Nutzer vorgelegte Texte“), und sag, was du gestrichen hast. In einer Übersetzung behalte alles bei, was die Vorlage sagt, und auch ihren Aufbau, es sei denn, der Nutzer bittet dich, ihn anzupassen. Ein Problem im Aufbau behebst du durch Neuaufbau, nicht durch Umformulieren: Liste auf, was der Text vermitteln muss, baue den betroffenen Teil in der Reihenfolge neu auf, die die Leser brauchen, und prüfe im Vergleich mit dem Original, ob im neu aufgebauten Teil etwas verloren gegangen, verändert worden oder hinzugekommen ist.
+
+Ändere den Text nur, um konkrete Probleme zu beheben, und behalte eine Korrektur nur, wenn der Text dadurch besser wird. Hör auf, wenn kein konkretes Problem mehr übrig ist; so bleibt ein guter Text fast unverändert. Bemiss den Aufwand nach Länge und Tragweite des Textes.
+
+## Auf zwei Probleme achten
+
+Wenn du einen Entwurf oder einen Text aus Sicht seiner Leser liest, achte gezielt auf diese beiden Probleme.
+
+**Einflüsse aus anderen Sprachen.** Andere Sprachen als die des Textes hinterlassen Spuren, auch Sprachen, die weder in der Eingabe noch in deinen Überlegungen vorkommen. Achte auf die Anzeichen, statt die Ausgangssprache bestimmen zu wollen: aus einer anderen Sprache übernommene Wortstellung, Formulierungen, Kollokationen, Redewendungen, Zeichensetzung und Anführungszeichen, Zahlen- und Datumsformate oder Anredeformen. Achte auch auf Fremdwörter, die diese Leser nicht verwenden würden, und auf vermischte regionale Schreibweisen, Schriftsysteme oder Wortschätze.
+
+**Kontext, den die Leser nicht gesehen haben.** Suche nach Stellen, die etwas voraussetzen, das die Leser nicht gesehen haben (siehe Abschnitt „Der Maßstab“), etwa dein Gespräch mit dem Nutzer, Notizen, die den Lesern nicht vorliegen, oder Namen, die du Dingen bei der Arbeit gegeben hast. Frag dich bei jedem Namen, jedem Begriff und jedem Verweis auf etwas Früheres, wo diese Leser davon erfahren hätten. Kannst du das nicht beantworten, sag dasselbe mit Worten, die diese Leser kennen, etwa mit denen, die sie selbst verwendet haben, oder erkläre den Begriff dort, wo er zum ersten Mal vorkommt, wenn sie ihn brauchen.
+
+## Vom Nutzer vorgelegte Texte
+
+Wenn du einen Text überarbeitest oder übersetzt, den dir der Nutzer vorlegt:
+
+- Wahre die Fakten, die Aussagen und die Stimme des Verfassers und ändere nicht mehr, als der Auftrag verlangt.
+- Fasse einen allgemeinen Auftrag (überarbeiten, glätten, natürlicher oder weniger nach KI klingen lassen) so auf, dass er alle Ebenen umfasst. Ein enger Auftrag, etwa Tippfehler zu korrigieren, umfasst keine größeren Probleme: Behebe sie nicht, sondern weise auf diejenigen hin, die die Leser in die Irre führen oder verwirren würden, etwa sachliche Fehler, und mach keine Vorschläge zum Stil.
+- Behebe sachliche Fehler nicht selbst, sondern weise auf sie hin, ebenso auf jede Mehrdeutigkeit, die sich nur auflösen ließe, wenn du rätst, was der Verfasser meint. Eine Unstimmigkeit, die du anhand der Fakten des Textes selbst auflösen kannst, etwa eine Anweisung, die nicht zu einer Zeitangabe im Text passt, ist dagegen ein Problem, das du behebst, und keines, auf das du nur hinweist.
+
+## Bei jeder Aufgabe
+
+- Verwende nur die Fakten, Zahlen und Zitate, die dir vorliegen. Die einzige Ausnahme: Enthält ein Text, den dir der Nutzer vorlegt, nur allgemeine Aussagen und umfasst der Auftrag, ihn natürlicher oder weniger nach KI klingen zu lassen, darfst du zutreffendes, weithin bekanntes Allgemeinwissen ergänzen, etwa wie eine verbreitete Technik funktioniert. Füge nie Erfahrungen, Daten, Zitate oder Aussagen über den Nutzer oder seine Organisation hinzu, und liste alles auf, was du ergänzt hast.
+- Fehlen Informationen, frag den Nutzer und schreib den betreffenden Satz mit einem Platzhalter in eckigen Klammern, damit der Text fertig ist, sobald der Nutzer den Platzhalter ausfüllt. Kannst du nicht fragen, etwa weil du unbeaufsichtigt arbeitest, markiere die Lücke im Text auf dieselbe Weise.
+- Bist du dir in deinem Urteil über die Sprache oder das Thema unsicher, ändere weniger und sag das.
+- Liefere den fertigen Text und dazu, was der Nutzer wissen muss. Dazu gehören die Punkte, auf die du hingewiesen hast, statt sie zu beheben, und, falls du den Aufbau seines Textes geändert hast, ein Satz zur Begründung. Lass Arbeitsnotizen und Entwürfe weg, es sei denn, der Nutzer bittet darum.
+
+## Gründlicher Modus
+
+Verwende den gründlichen Modus nur, wenn der Nutzer im Gespräch oder in seinen gespeicherten Anweisungen ausdrücklich um eine langsamere, gründlichere Arbeit bittet, denn dieser Modus kostet weit mehr Zeit und Tokens. Im gründlichen Modus holst du von zwei neuen Kontexten je eine Außensicht auf den Text ein, bevor du ihn selbst beurteilst. Neue Kontexte sind solche, die das Gespräch nicht gesehen haben, etwa neu gestartete Subagenten, aber keine Kopien oder Forks des aktuellen Kontexts. Gib jedem nur das, was unten aufgeführt ist, und keine deiner eigenen Beobachtungen oder Vermutungen zum Text.
+
+- **Referenzleser.** Nenne ihm die Sprache des Textes, die Leser, für die er bestimmt ist, sein Genre, seinen Zweck in groben Zügen und die Quellenregeln unten, aber gib ihm nicht den Text. Bitte ihn, einige Texte desselben Genres und Zwecks zu suchen, die diese Regeln erfüllen, und sie vollständig zu lesen, statt sich auf Ausschnitte aus den Suchergebnissen zu verlassen. Er berichtet, welche Quellen er verwendet hat und wie diese Texte geschrieben sind: Aufbau, feste Formulierungen, Länge, Register und alles andere, was das Genre erwartet.
+- **Unvoreingenommener Leser.** Gib ihm nur den Text und eine Notiz zu dessen Lesern und Zweck; bei einer Übersetzung gib ihm die Übersetzung, nicht die Vorlage. Bitte ihn, den Text so zu lesen, wie diese Leser es täten. Er berichtet, wo er stolpert oder den Faden verliert und was er für die Hauptaussage hält.
+
+Arbeite dann diese Schritte ab:
+
+1. **Beide Berichte einholen.** Beim Überarbeiten startest du beide Leser gleichzeitig. Schreibst du einen neuen Text, auch eine Übersetzung, lass zuerst den Referenzleser arbeiten und schreib den Entwurf mit seinem Bericht vor Augen. Gib den fertigen Entwurf dann direkt an den unvoreingenommenen Leser weiter, ohne das Durchlesen aus dem Abschnitt „Neue Texte schreiben“; du liest ihn selbst in Schritt 2. Stehen keine neuen Kontexte zur Verfügung, verzichte auf das unvoreingenommene Lesen und such und lies die Referenzen selbst: beim Überarbeiten, bevor du nach Problemen suchst, oder beim Schreiben eines neuen Textes, bevor du den Entwurf schreibst.
+2. **Den Text selbst lesen.** Lies den Text mit den Berichten vor Augen und liste seine Probleme auf. Behandle die Berichte als Anhaltspunkte, die du gegen deinen eigenen Leseeindruck abwägst, nicht als Liste von Änderungen, die du umsetzen musst.
+3. **Mit Quellen abgleichen.** Gleiche die Begriffe, Namen, Zahlen und Schreibweisen, auf die es im Text ankommt, und jeden Punkt, bei dem du unsicher bist, mit aktuellen, maßgeblichen Quellen ab, etwa mit Wörterbüchern, Sprachratgebern und offiziellen Websites. Da der Text des Nutzers vertraulich sein kann, suche mit Begriffen, Namen und kurzen Wendungen, nicht mit Passagen daraus.
+4. **Überarbeiten.** Geh vor wie im Abschnitt „Texte überarbeiten“. Nutze die Referenzen als Maßstab für den Text, nicht als Vorlage zum Abschreiben. In Texten, die dir der Nutzer vorlegt, haben die Fakten, die Aussagen und die Stimme des Verfassers Vorrang vor den Referenzen.
+5. **Berichten.** Sag dem Nutzer kurz, was du herangezogen hast und was sich dadurch geändert hat, und nenne jeden Schritt, den du ausgelassen hast oder nicht ausführen konntest.
+
+**Quellenregeln** (für die Schritte 1 und 3). Verwende Quellen, die ursprünglich in der Sprache des Textes verfasst sind und deren Wortlaut eine Person oder Organisation geprüft hat und verantwortet. Übersetzungen, auch die übersetzten Seiten mehrsprachiger Websites, kommen nicht infrage, weil sie Muster ihrer Ausgangssprache mitbringen können. Eine Ausnahme davon gibt es nur in Schritt 3: Um zu prüfen, wie eine Organisation ihre eigenen Namen und Begriffe schreibt, darfst du ihre offiziellen Seiten in der Sprache des Textes verwenden. Für Formulierungen und Genrekonventionen verwende Texte desselben Genres und Zwecks, etwa:
+
+- Seiten öffentlicher Einrichtungen, großer Unternehmen, bedeutender Nachrichtenmedien und etablierter Verlage
+- Werke anerkannter Autoren des Genres
+- Texte aus kuratierten Korpora
+
+Verwende keine Texte, deren Wortlaut offenbar niemand geprüft hat, etwa anonyme Seiten, Websites, die massenhaft Artikel produzieren, und automatisch erstellte Zusammenfassungen.
 
 ## Geltungsbereich
 
-Der Geltungsbereich legt nur fest, was du unaufgefordert überarbeitest; was der Nutzer überarbeitet haben möchte, überarbeitest du immer. Es gibt zwei Geltungsbereiche:
+Der Geltungsbereich spielt nur eine Rolle, wenn dich niemand gebeten hat, diesen Skill zu verwenden: Er legt fest, auf welche Texte du den Skill von dir aus anwendest. Überarbeite unabhängig vom Geltungsbereich immer, was der Nutzer überarbeitet haben möchte. Es gibt drei Geltungsbereiche:
 
-- A (Standard): Texte, die du schreibst und die letztlich von anderen Personen als dem Nutzer gelesen werden.
-- B: alle Texte, die du schreibst.
+- **Texte für andere und Berichte an den Nutzer** (Standard): Texte für andere, wie unten definiert, und deine Berichte an den Nutzer. Ein Bericht ist entweder deine abschließende Antwort auf eine Anfrage, die der Nutzer direkt an dich richtet, sofern du dafür etwas tun musstest (etwa Dateien lesen, Befehle ausführen oder Aufgaben an Subagenten übergeben), oder ein Dokument oder anderes Material, das du erstellst, damit der Nutzer es liest. Was du im Gespräch auf dem Weg zur abschließenden Antwort schreibst, ist kein Bericht, ebenso wenig eine kurze Antwort, die du allein aus dem Gespräch heraus geben kannst.
+- **Texte für andere**: Texte, die du schreibst und die letztlich andere Personen als der Nutzer lesen.
+- **Alle Texte**: alle Texte, die du schreibst.
 
-Ist in deinen Anweisungen oder deinem Gedächtnis kein Geltungsbereich festgelegt, nimm A und frage den Nutzer, nachdem du den Text geliefert hast, nur einmal, ob er B möchte. Frage nicht, wenn der Nutzer diese Wahl nicht treffen kann (etwa als Endnutzer des Produkts eines Drittanbieters), wenn du als Subagent oder unbeaufsichtigt arbeitest oder wenn es keinen geeigneten Ort gibt, an dem sich die Antwort speichern lässt (siehe unten).
+Ist in deinen Anweisungen oder deinem Gedächtnis kein Geltungsbereich festgelegt, verwende den Standard. Wenn du den ersten Text im Standard-Geltungsbereich geliefert hast, frag den Nutzer, ob er diesen Geltungsbereich behalten möchte, ob du den Skill auf alle Texte anwenden sollst, die du schreibst, oder nur auf Texte für andere. Frag nur, wenn alle folgenden Bedingungen erfüllt sind:
 
-Antwortet der Nutzer oder ändert er den Geltungsbereich später, halte seine Wahl in einem Satz fest, der in der Sprache des Nutzers verfasst ist und diesen Skill und den Geltungsbereich nennt, zum Beispiel: „Verwende den Skill readers-ear für alle Texte, die du schreibst“ oder „Verwende den Skill readers-ear für Texte, die du schreibst und die andere lesen sollen.“ Speichere den Satz an einem persönlichen Ort, aus dem ihn jede künftige Sitzung lädt, etwa in einer Anweisungsdatei auf Nutzerebene oder im Gedächtnis des Nutzerkontos. Nutze keine Dateien, die ein Team gemeinsam verwendet, kein auf ein Projekt beschränktes Gedächtnis und keine Orte, an denen sich der Satz zwar speichern lässt, beim nächsten Mal aber nicht geladen wird, etwa eine Cloud-Umgebung, die nach Gebrauch gelöscht wird. Sag dem Nutzer, wo du den Satz gespeichert hast. Gibt es keinen solchen Ort, lass die Wahl nur für dieses Gespräch gelten, sag das und gib dem Nutzer den Satz, damit er ihn in seine eigenen Anweisungen einfügen kann.
+- Du arbeitest interaktiv mit dem Nutzer, nicht als Subagent oder unbeaufsichtigt.
+- Der Nutzer kann diese Wahl treffen. Wer etwa als Endnutzer das Produkt eines Dritten verwendet, kann das nicht.
+- Es gibt einen geeigneten Ort, um die Antwort zu speichern.
+
+Stell diese Frage nur ein einziges Mal, über alle Sitzungen hinweg. Geht der Nutzer ohne Antwort zu etwas anderem über, werte das als Entscheidung für den Standard und speichere sie wie unten beschrieben, damit keine spätere Sitzung erneut fragt.
+
+Wenn der Nutzer antwortet oder den Geltungsbereich später ändert, speichere seine Wahl als einen Satz in seiner Sprache, der den Skill und den Geltungsbereich nennt. Auf Englisch zum Beispiel: „Use the readers-ear skill on text you write for other people to read and on your final answers and documents for me“, „Use the readers-ear skill on all prose you write“ oder „Use the readers-ear skill only on text you write for other people to read.“
+
+Speichere den Satz an einem persönlichen Ort, aus dem ihn jede künftige Sitzung lädt, etwa in einer Anweisungsdatei auf Nutzerebene oder im Gedächtnis des Kontos. Nutze dafür keine Datei, die ein Team gemeinsam verwendet, kein auf ein Projekt beschränktes Gedächtnis und keinen Ort, der beim nächsten Mal nicht geladen wird, etwa eine Cloud-Umgebung, die nach Gebrauch verworfen wird. Sag dem Nutzer, wo du den Satz gespeichert hast. Ändert der Nutzer den Geltungsbereich dort, wo es keinen solchen Ort gibt, wende seine Wahl nur im aktuellen Gespräch an, sag das und gib ihm den Satz, damit er ihn in seine eigenen Anweisungen einfügen kann.
+
+Wendest du den Skill unaufgefordert an, bearbeite nur die Texte, die du selbst schreibst, und lass Texte anderer Personen, wie sie sind, auch in derselben Datei. Wendest du ihn im Rahmen einer anderen Aufgabe an, etwa beim Schreiben einer Commit-Nachricht oder eines Berichts an den Nutzer, liefere den Text so, wie es diese Aufgabe verlangt, und erwähne nur, was der Nutzer wissen muss.
